@@ -2,7 +2,7 @@
   "handler": "Microsoft.Compute.MultiVm",
   "version": "0.0.1-preview",
   "parameters": {
-    "basics": [
+    "DKSoni": [
       {
         "name": "size",
         "type": "Microsoft.Common.DropDown",
@@ -177,12 +177,12 @@
       "publicIPName" : "[steps('deploymentDetails').publicIP.name]",
       "dnsNameForPublicIP" : "[steps('deploymentDetails').publicIP.domainNameLabel]",
 
-      "adminUsername": "[basics('adminUsername')]",
-      "authenticationType": "[basics('adminCredentials').authenticationType]",
-      "adminPassword": "[basics('adminCredentials').password]",
-      "sshPublicKey": "[basics('adminCredentials').sshPublicKey]",
+      "adminUsername": "[DKSoni('adminUsername')]",
+      "authenticationType": "[DKSoni('adminCredentials').authenticationType]",
+      "adminPassword": "[DKSoni('adminCredentials').password]",
+      "sshPublicKey": "[DKSoni('adminCredentials').sshPublicKey]",
 
-      "size": "[basics('size')]",
+      "size": "[DKSoni('size')]",
       "vmSize": "[steps('size').vmSize]",
       "jenkinsAdminPassword" : "[steps('security').jenkinsAdminPassword]",
 
